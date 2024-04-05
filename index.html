@@ -352,7 +352,7 @@
             width: 960px;
             height: 500px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            overflow: auto;
+            overflow-y: scroll;
             display: flex;
             flex-direction: column;
             justify-content: start;
@@ -465,6 +465,18 @@
             justify-content: space-between;
             align-items: center;
         }
+
+        .apply {
+            position: fixed;
+            bottom: calc(50vh - 230px);
+            right: calc(50vw - 445px);
+            border-radius: 5px;
+            border: none;
+            padding: 3px 10px;
+            box-shadow: 0 0 3px black;
+            z-index: 1050; 
+        }
+
     </style>
 
 </head>
@@ -572,6 +584,7 @@
     <!-- <img class="home-img" src="/static/img/home.png"> -->
 
     <div id="myModal" class="modal">
+        <button class="apply">적용</button>
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="category-container">
