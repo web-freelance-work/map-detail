@@ -349,9 +349,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 20px;
-            width: 650px;
-            height: auto;
-            max-height: 300px;
+            width: 960px;
+            height: 500px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
             overflow: auto;
             display: flex;
@@ -377,8 +376,8 @@
             width: 100%;
             height: auto;
             display: flex;
-            justify-content: center;
-            align-items: start;
+            justify-content: start;
+            align-items: center;
             flex-wrap: wrap;
             margin: 10px 0;
         }
@@ -397,7 +396,7 @@
             cursor: pointer;
         }
 
-        .category[data-category="medical"]:hover{
+        .category[data-category="medical"]:hover {
             background-color: lightgreen;
         }
 
@@ -421,8 +420,8 @@
             width: 100%;
             height: auto;
             display: flex;
-            justify-content: center;
-            align-items: start;
+            justify-content: start;
+            align-items: center;
             flex-wrap: wrap;
             margin: 10px 0;
         }
@@ -445,8 +444,8 @@
             width: 100%;
             height: auto;
             display: flex;
-            justify-content: center;
-            align-items: start;
+            justify-content: start;
+            align-items: center;
             flex-wrap: wrap;
             margin: 10px 0;
         }
@@ -576,14 +575,23 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="category-container">
-                <div class="category" data-category="medical">의료</div>
-                <div class="category" data-category="education">학군/교육</div>
-                <div class="category" data-category="facilities">시설</div>
-                <div class="category" data-category="residential">거주</div>
-                <div class="category" data-category="leisure">여가</div>
+                <p style="width: 100%; text-align: start; padding: 0 20px;">원하는 주거항목을 선택해주세요.</p>
+                <p style="width: 100%; text-align: start; padding: 0 20px; font-size: 13px; color: grey">(중복 적용이 가능합니다)
+                </p>
+                <div id="medical" class="category" data-category="medical">의료</div>
+                <div id="education" class="category" data-category="education">학군/교육</div>
+                <div id="facilities" class="category" data-category="facilities">시설</div>
+                <div id="residential" class="category" data-category="residential">거주</div>
+                <div id="leisure" class="category" data-category="leisure">여가</div>
             </div>
             <p style="font-size: 25px">⇩</p>
             <div id="details-medical" class="detail-container" style="display:none;">
+                <p style="width: 100%; text-align: start; padding: 0 20px;"><span style="color: lightgreen;">● </span>
+                    의료
+                </p>
+                <p style="width: 100%; text-align: start; padding: 0 20px; font-size: 13px; color: grey">원하는 조건을 골라
+                    세부항목을
+                    선택해주세요.</p>
                 <div class="detail">약국</div>
                 <div class="detail">내과</div>
                 <div class="detail">외과</div>
@@ -596,6 +604,12 @@
                 <div class="detail">한의원</div>
             </div>
             <div id="details-education" class="detail-container" style="display:none;">
+                <p style="width: 100%; text-align: start; padding: 0 20px;"><span style="color: lightyellow;">●
+                    </span>교육
+                </p>
+                <p style="width: 100%; text-align: start; padding: 0 20px; font-size: 13px; color: grey">원하는 조건을 골라
+                    세부항목을
+                    선택해주세요.</p>
                 <div class="detail">유치원</div>
                 <div class="detail">어린이집</div>
                 <div class="detail">초등학교</div>
@@ -604,6 +618,12 @@
                 <div class="detail">대학교</div>
             </div>
             <div id="details-facilities" class="detail-container" style="display:none;">
+                <p style="width: 100%; text-align: start; padding: 0 20px;"><span style="color: lightskyblue;">●
+                    </span>시설
+                </p>
+                <p style="width: 100%; text-align: start; padding: 0 20px; font-size: 13px; color: grey">원하는 조건을 골라
+                    세부항목을
+                    선택해주세요.</p>
                 <div class="detail">공원</div>
                 <div class="detail">은행</div>
                 <div class="detail">주민센터</div>
@@ -616,6 +636,11 @@
                 <div class="detail">전기차 충전소</div>
             </div>
             <div id="details-residential" class="detail-container" style="display:none;">
+                <p style="width: 100%; text-align: start; padding: 0 20px;"><span style="color: lightcoral;">● </span>거주
+                </p>
+                <p style="width: 100%; text-align: start; padding: 0 20px; font-size: 13px; color: grey">원하는 조건을 골라
+                    세부항목을
+                    선택해주세요.</p>
                 <div class="detail">평수</div>
                 <div class="detail">준공년도</div>
                 <div class="detail">세대수</div>
@@ -623,6 +648,11 @@
                 <div class="detail">방수(있으면)</div>
             </div>
             <div id="details-leisure" class="detail-container" style="display:none;">
+                <p style="width: 100%; text-align: start; padding: 0 20px;"><span style="color: thistle;">● </span>여가
+                </p>
+                <p style="width: 100%; text-align: start; padding: 0 20px; font-size: 13px; color: grey">원하는 조건을 골라
+                    세부항목을
+                    선택해주세요.</p>
                 <div class="detail">영화관</div>
                 <div class="detail">미술관</div>
                 <div class="detail">체육관</div>
@@ -632,6 +662,8 @@
                 <div class="detail">공공체육시설</div>
             </div>
             <p id="arrow" style="font-size: 25px; display: none">⇩</p>
+            <p id="perfecthomes" style="width: 100%; text-align: start; padding: 0 20px; margin: 0; display: none">🏠
+                퍼펙트 홈즈</p>
             <div id="selected-details" class="selected-detail-container">
             </div>
         </div>
@@ -827,16 +859,6 @@
         modal.style.display = "block";
     }
 
-    span.onclick = function () {
-        var arrow = document.getElementById('arrow');
-        var detailContainers = document.querySelectorAll('.detail-container');
-        modal.style.display = "none";
-        detailContainers.forEach(function (detail) {
-            detail.style.display = 'none';
-        });
-        arrow.style.display = 'none';
-    }
-
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -857,40 +879,82 @@
                 var category = this.getAttribute('data-category');
                 var detailsId = 'details-' + category;
                 var arrow = document.getElementById('arrow');
+                var categoryButton = document.getElementById(category);
 
-                
+                document.querySelectorAll('.category').forEach(function (category) {
+                    category.style.backgroundColor = '';
+                });
+
+                categoryButton.style.backgroundColor = categoryColors[category];
+
                 document.querySelectorAll('.detail-container').forEach(function (container) {
                     container.style.display = 'none';
                 });
+
                 var detailsContainer = document.getElementById(detailsId);
                 detailsContainer.style.display = 'flex';
                 arrow.style.display = detailsContainer.style.display === 'flex' ? 'block' : 'none';
 
                 detailsContainer.querySelectorAll('.detail').forEach(function (detail) {
-                    detail.onclick = function () {
-                        var detailText = this.textContent;
-                        var isDuplicate = Array.from(document.querySelectorAll('#selected-details .selected-detail-item'))
-                            .some(function (item) { return item.textContent.trim() === detailText; });
+                    detail.removeEventListener('click', handleDetailClick);
 
-                        if (!isDuplicate) {
-                            var detailEl = document.createElement('div');
-                            detailEl.classList.add('selected-detail-item');
-                            detailEl.textContent = detailText;
-                            detailEl.style.backgroundColor = categoryColors[category];
-                            var removeBtn = document.createElement('span');
-                            removeBtn.innerHTML = '&nbsp;x';
-                            removeBtn.onclick = function () { detailEl.remove(); };
-                            removeBtn.style.cursor = 'pointer';
-                            removeBtn.style.marginLeft = '5px';
-                            detailEl.appendChild(removeBtn);
-
-                            document.getElementById('selected-details').appendChild(detailEl);
-                        }
-                    };
+                    detail.addEventListener('click', handleDetailClick);
                 });
             });
         });
+
+        function handleDetailClick() {
+            var detailText = this.textContent.trim();
+            var isDuplicate = Array.from(document.querySelectorAll('#selected-details .selected-detail-item'))
+                .some(function (item) { return item.textContent.trim().indexOf(detailText) > -1; });
+            var perfecthomes = document.getElementById('perfecthomes');
+            perfecthomes.style.display = 'block';
+
+            if (!isDuplicate) {
+                addSelectedDetail(this.textContent.trim(), this.parentNode.getAttribute('id').replace('details-', ''));
+            }
+        }
+
+        function addSelectedDetail(detailText, category) {
+            var detailEl = document.createElement('div');
+            detailEl.classList.add('selected-detail-item');
+            detailEl.textContent = detailText;
+            detailEl.style.backgroundColor = categoryColors[category];
+            var removeBtn = document.createElement('span');
+            removeBtn.textContent = '×';
+            removeBtn.onclick = function () {
+                detailEl.remove();
+            };
+            removeBtn.style.cursor = 'pointer';
+            removeBtn.style.marginLeft = '10px';
+            detailEl.appendChild(removeBtn);
+
+            document.getElementById('selected-details').appendChild(detailEl);
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+
+            document.querySelectorAll('.category').forEach(function (category) {
+                category.style.backgroundColor = '';
+            });
+
+            var selectedDetailsContainer = document.getElementById('selected-details');
+            selectedDetailsContainer.innerHTML = '';
+
+            var detailContainers = document.querySelectorAll('.detail-container');
+            detailContainers.forEach(function (container) {
+                container.style.display = 'none';
+            });
+
+            var arrow = document.getElementById('arrow');
+            arrow.style.display = 'none';
+
+            var perfecthomes = document.getElementById('perfecthomes');
+            perfecthomes.style.display = 'none';
+        };
     });
+
 
 
 </script>
